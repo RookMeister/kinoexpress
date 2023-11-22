@@ -55,7 +55,7 @@ defineProps<{ item: IFilm }>()
         format="webp"
         :src="item.posterUrlPreview"
         :alt="item.nameRu"
-        w-full h-full object-cover
+        w-full h-full object-cover rounded-lg
         :style="{ 'view-transition-name': `item-${item.kinopoiskId}` }"
       />
       <div v-else h-full op10 flex>
