@@ -1,0 +1,16 @@
+{
+	"extends": "./.nuxt/tsconfig.json",
+	"compilerOptions": {
+		"jsx": "preserve",
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"skipLibCheck": true,
+		"strict": true,
+		"allowJs": true,
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true
+	},
+	"include": ["./**/*.vue", "./.nuxt/nuxt.d.ts"]
+}
