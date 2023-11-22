@@ -12,9 +12,11 @@ const headers = {
   'Content-Type': 'application/json',
 }
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
   try {
-    const url = `${KINOPOISK_URL}/api/v2.2/films/collections?type=TOP_POPULAR_MOVIES&page=1`
+    const { type, page = 1 } = getQuery(event)
+
+    const url = `${KINOPOISK_URL}/api/v2.2/films/collections?type=${type}&${page}=1`
     const { items } = await $fetch<IResponse>(url, { method: 'GET', headers })
 
     return items
